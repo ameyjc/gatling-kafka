@@ -21,6 +21,8 @@ class KafkaRequestActionBuilder[K,V](kafkaAttributes: KafkaAttributes[K,V]) exte
 
     system.registerOnTermination(producer.close())
 
+    println(s"Payload is $kafkaAttributes")
+
     new KafkaRequestAction(
       producer,
       kafkaAttributes,
